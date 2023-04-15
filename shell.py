@@ -68,5 +68,10 @@ pub_dict = pub.values('author', 'article')
 pub_dict
 
 
+pub_list = pub.values_list('author__name', 'article__title')
+
+pub_list
+
+
 pub = Publication.objects.filter(author__name__contains='В')
 pub

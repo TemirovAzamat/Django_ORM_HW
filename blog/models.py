@@ -19,7 +19,7 @@ class Author(AbstractUser):
 
 class Article(m.Model):
     title = m.CharField(max_length=255, verbose_name='Заголовок статьи')
-    author = m.ManyToManyField(Author, related_name='author', through='Publication')
+    authors = m.ManyToManyField(Author, related_name='articles', through='Publication')
 
     def __str__(self):
         return self.title
