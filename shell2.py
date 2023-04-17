@@ -2,9 +2,8 @@ from django.db.models import Q, Subquery
 from blog.models import *
 
 # 1
-# Добавить СО-автора, надеюсь правильно понял
-Publication.objects.create(date_published='2023-08-17', author=author2, article=article1)
-Publication.objects.create(date_published='2022-08-17', author=author3, article=article2)
+article1.authors.add(author2)
+article2.authors.add(author3)
 
 
 # 2
